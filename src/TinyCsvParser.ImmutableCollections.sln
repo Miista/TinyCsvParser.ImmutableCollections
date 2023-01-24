@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Tooling", "0. Tooling", "{97D2A7E2-1DF4-45C0-B682-1BFF7B92E910}"
+	ProjectSection(SolutionItems) = preProject
+		..\build.cake = ..\build.cake
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+		..\nuget\TinyCsvParser.ImmutableCollections.nuspec = ..\nuget\TinyCsvParser.ImmutableCollections.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Project", "1. Project", "{2F4E3343-B5CD-4445-842F-4DBC7015DF1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Feature", "2. Feature", "{A691A026-051E-462B-BA93-4DC213F3FB98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{91B71471-2BC5-4BDA-99D3-A90626AF5991}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyCsvParser.ImmutableCollections", "TinyCsvParser.ImmutableCollections\TinyCsvParser.ImmutableCollections.csproj", "{03A543B4-8921-44D6-A354-BCC748B66BA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyCsvParser.ImmutableCollections.Tests", "TinyCsvParser.ImmutableCollections.Tests\TinyCsvParser.ImmutableCollections.Tests.csproj", "{C6E6D6CE-7D24-405B-82E1-7991980F8242}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{91B71471-2BC5-4BDA-99D3-A90626AF5991} = {2F4E3343-B5CD-4445-842F-4DBC7015DF1A}
+		{03A543B4-8921-44D6-A354-BCC748B66BA7} = {A691A026-051E-462B-BA93-4DC213F3FB98}
+		{C6E6D6CE-7D24-405B-82E1-7991980F8242} = {A691A026-051E-462B-BA93-4DC213F3FB98}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91B71471-2BC5-4BDA-99D3-A90626AF5991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91B71471-2BC5-4BDA-99D3-A90626AF5991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91B71471-2BC5-4BDA-99D3-A90626AF5991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91B71471-2BC5-4BDA-99D3-A90626AF5991}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03A543B4-8921-44D6-A354-BCC748B66BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03A543B4-8921-44D6-A354-BCC748B66BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03A543B4-8921-44D6-A354-BCC748B66BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03A543B4-8921-44D6-A354-BCC748B66BA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6E6D6CE-7D24-405B-82E1-7991980F8242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6E6D6CE-7D24-405B-82E1-7991980F8242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6E6D6CE-7D24-405B-82E1-7991980F8242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6E6D6CE-7D24-405B-82E1-7991980F8242}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
