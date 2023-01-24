@@ -12,6 +12,16 @@ Supports **.NET Core** (.NET Standard 2+)
 PM> Install-Package TinyCsvParser.ImmutableCollections
 ```
 
+## Support
+
+This extension adds support for the following types (in alphabetical order):
+* `ImmutableArray<T>`
+* `ImmutableHashSet<T>`
+* `ImmutableList<T>`
+* `ImmutableSortedSet<T>`
+* `ImmutableStack<T>`
+* `ImmutableQueue<T>`
+
 ## Usage
 
 The only thing you need to keep in mind when using this extension
