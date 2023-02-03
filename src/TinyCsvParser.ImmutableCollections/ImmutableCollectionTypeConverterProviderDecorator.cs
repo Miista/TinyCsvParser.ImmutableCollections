@@ -8,7 +8,7 @@ using TinyCsvParser.TypeConverter;
 
 namespace TinyCsvParser.ImmutableCollections
 {
-    public class ImmutableCollectionTypeConverterProviderDecorator : TypeConverterProvider, ITypeConverterProvider
+    public class ImmutableCollectionTypeConverterProviderDecorator : ITypeConverterProvider
     {
         private readonly ITypeConverterProvider _typeConverterProvider;
 
@@ -27,12 +27,12 @@ namespace TinyCsvParser.ImmutableCollections
             _typeConverterProvider = typeConverterProvider ?? throw new ArgumentNullException(nameof(typeConverterProvider));
         }
 
-        public new ITypeConverter<TTargetType> Resolve<TTargetType>()
+        public ITypeConverter<TTargetType> Resolve<TTargetType>()
         {
-            return base.Resolve<TTargetType>();
+            return _typeConverterProvider.Resolve<TTargetType>();
         }
 
-        public new IArrayTypeConverter<TTargetType> ResolveCollection<TTargetType>()
+        public IArrayTypeConverter<TTargetType> ResolveCollection<TTargetType>()
         {
             if (typeof(TTargetType).IsGenericType)
             {
@@ -48,7 +48,7 @@ namespace TinyCsvParser.ImmutableCollections
                 }
             }
 
-            return base.ResolveCollection<TTargetType>();
+            return _typeConverterProvider.ResolveCollection<TTargetType>();
         }
 
         private static IArrayTypeConverter<T> CreateInstance<T>(SpecializedTypePair specializedTypePair, ITypeConverterProvider typeConverterProvider)
