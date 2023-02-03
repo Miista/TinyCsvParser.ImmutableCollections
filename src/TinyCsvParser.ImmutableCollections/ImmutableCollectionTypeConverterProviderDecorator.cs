@@ -8,7 +8,7 @@ using TinyCsvParser.TypeConverter;
 
 namespace TinyCsvParser.ImmutableCollections
 {
-    public class ImmutableCollectionTypeConverterProviderDecorator : ITypeConverterProvider
+    public class ImmutableCollectionTypeConverterProviderDecorator : TypeConverterProvider, ITypeConverterProvider
     {
         private readonly ITypeConverterProvider _typeConverterProvider;
 
@@ -27,12 +27,12 @@ namespace TinyCsvParser.ImmutableCollections
             _typeConverterProvider = typeConverterProvider ?? throw new ArgumentNullException(nameof(typeConverterProvider));
         }
 
-        public ITypeConverter<TTargetType> Resolve<TTargetType>()
+        public new ITypeConverter<TTargetType> Resolve<TTargetType>()
         {
-            return _typeConverterProvider.Resolve<TTargetType>();
+            return base.Resolve<TTargetType>();
         }
 
-        public IArrayTypeConverter<TTargetType> ResolveCollection<TTargetType>()
+        public new IArrayTypeConverter<TTargetType> ResolveCollection<TTargetType>()
         {
             if (typeof(TTargetType).IsGenericType)
             {
@@ -42,13 +42,13 @@ namespace TinyCsvParser.ImmutableCollections
                 {
                     var specializedType = typeof(TTargetType).GenericTypeArguments.First();
                     var specializedTypePair = typePair.SpecializeTo(specializedType);
-                    var arrayTypeConverter = CreateInstance<TTargetType>(specializedTypePair, _typeConverterProvider);
+                    var arrayTypeConverter = CreateInstance<TTargetType>(specializedTypePair, this);
 
                     return arrayTypeConverter;
                 }
             }
 
-            return _typeConverterProvider.ResolveCollection<TTargetType>();
+            return base.ResolveCollection<TTargetType>();
         }
 
         private static IArrayTypeConverter<T> CreateInstance<T>(SpecializedTypePair specializedTypePair, ITypeConverterProvider typeConverterProvider)

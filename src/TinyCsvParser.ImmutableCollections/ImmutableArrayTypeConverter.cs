@@ -16,13 +16,13 @@ namespace TinyCsvParser.ImmutableCollections
         public bool TryConvert(string[] value, out ImmutableArray<T> result)
         {
             result = ImmutableArray<T>.Empty;
-            
+
             var innerTypeConverter = _typeConverterProvider.ResolveCollection<T[]>();
-            
+        
             if (innerTypeConverter.TryConvert(value, out var values))
             {
                 result = values.ToImmutableArray();
-
+        
                 return true;
             }
 
