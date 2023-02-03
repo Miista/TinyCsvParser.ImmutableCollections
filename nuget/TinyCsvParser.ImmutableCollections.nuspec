@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>TinyCsvParser.ImmutableCollections</id>
-    <version>1.0.0-alpha</version>
+    <version>1.0.1-alpha</version>
     <title>TinyCsvParser: Parsing immutable collections</title>
     <authors>Søren Guldmund</authors>
     <owners>Søren Guldmund</owners>
@@ -14,7 +14,7 @@
     <copyright>Copyright 2023</copyright>
     <tags>TinyCsvParser Parse Immutable Collections Converter Mapping</tags>
     <readme>docs\README.md</readme>
-    <releaseNotes>Initial release</releaseNotes>
+    <releaseNotes>Ensure we can support any type.</releaseNotes>
 
     <dependencies>
       <group targetFramework="netstandard2.0" />
