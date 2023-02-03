@@ -193,10 +193,11 @@ namespace TinyCsvParser.ImmutableCollections.Tests
             private static (ICsvParser<Data> Parser, CsvReaderOptions ReaderOptions) CreateParser()
             {
                 var options = new CsvParserOptions(skipHeader: true, fieldsSeparator: ',');
-                var typeConverterProviderBuilder = new TypeConverterProvider().AddImmutableCollections() as TypeConverterProvider;
-                typeConverterProviderBuilder.Add(new PersonTypeConverter() as ITypeConverter<FirstName>);
-                typeConverterProviderBuilder.Add(new PersonTypeConverter() as IArrayTypeConverter<FirstName[]>);
-                var parser = new CsvParser<Data>(options, new Data.Mapping(typeConverterProviderBuilder));
+                var typeConverterProvider = new TypeConverterProvider()
+                    .Add(new PersonTypeConverter() as ITypeConverter<FirstName>)
+                    .Add(new PersonTypeConverter() as IArrayTypeConverter<FirstName[]>)
+                    .AddImmutableCollections();
+                var parser = new CsvParser<Data>(options, new Data.Mapping(typeConverterProvider));
                 var readerOptions = new CsvReaderOptions(new[] { ";" });
 
                 return (Parser: parser, ReaderOptions: readerOptions);
