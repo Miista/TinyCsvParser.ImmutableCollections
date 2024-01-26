@@ -1,4 +1,6 @@
-[MIT License]: https://opensource.org/licenses/MIT
+<!--[![Build status](https://dev.azure.com/palmund/Typesafe.Snapshots/_apis/build/status/Typesafe.Snapshots)](https://dev.azure.com/palmund/Typesafe.Snapshots/_build/latest?definitionId=11)-->
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![NuGet version](https://badge.fury.io/nu/TinyCsvParser.ImmutableCollections.svg)](https://www.nuget.org/packages/TinyCsvParser.ImmutableCollections)
 
 # TinyCsvParser.ImmutableCollections
 
@@ -57,4 +59,4 @@ Console.WriteLine(string.Join(',', result[0].Result.Ints)); // Prints 0,1,2
 
 ## License
 
-The library is released under terms of the [MIT License].
+This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.
